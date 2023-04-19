@@ -18,7 +18,7 @@ export default function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
+
     setDecodeText(decode(encodeText));
   }
 
@@ -28,6 +28,7 @@ export default function Form() {
         <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField 
+              required
               id="encoded-text" 
               label="Encoded text" 
               variant="outlined"
