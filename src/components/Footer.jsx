@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <BottomNavigation showLabels>
-        <BottomNavigationAction label="Me" icon={<CodeIcon />} />
+        <BottomNavigationAction label="Miguel Barceló" icon={<CodeIcon />} />
       </BottomNavigation>
     </Box>
   )
