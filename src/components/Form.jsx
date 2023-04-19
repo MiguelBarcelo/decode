@@ -1,6 +1,7 @@
 import { useContext } from "react"
 // Context
 import DecodeContext from "../context/DecodeContext"
+import { decode } from "../helpers/utils"
 // MUI
 import TextField from "@mui/material/TextField"
 import Button from "@mui/material/Button"
@@ -17,9 +18,8 @@ export default function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    // TODO: Implement decode function
-    setDecodeText({test});
+    
+    setDecodeText(decode(encodeText));
   }
 
   return (
@@ -38,7 +38,7 @@ export default function Form() {
         </Grid>
         <Grid item xs={12}>
           <FormControl fullWidth>
-            <Button variant="contained">Start</Button>
+            <Button variant="contained" type="submit">Start</Button>
           </FormControl>
         </Grid>
       </Grid>
