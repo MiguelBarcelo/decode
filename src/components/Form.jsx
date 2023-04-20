@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect, useRef } from "react"
 // Context
 import DecodeContext from "../context/DecodeContext"
 import { decode } from "../helpers/utils"
@@ -16,6 +16,14 @@ export default function Form() {
     setDecodeText 
   } = useContext(DecodeContext);
 
+  const inputText = useRef(null);
+
+  useEffect(() => {
+    if (inputText.current) {
+      inputText.current.focus();
+    }
+  }, [])
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -28,12 +36,13 @@ export default function Form() {
         <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField 
+              inputRef={ inputText }
               required
               id="encoded-text" 
               label="Encoded text" 
               variant="outlined"
-              value={encodeText}
-              onChange={(event) => setEncodeText(event.target.value)}
+              value={ encodeText }
+              onChange={ (event) => setEncodeText(event.target.value) }
             ></TextField>
           </FormControl>
         </Grid>
