@@ -21,7 +21,7 @@ export default function Decode() {
                 Decoded text
               </Typography>
               <Typography variant="body1">
-                { JSON.stringify(decodeText) }
+                { decodeText.hasOwnProperty('id') && JSON.stringify(decodeText) }
               </Typography>
             </CardContent>
           </Card>
